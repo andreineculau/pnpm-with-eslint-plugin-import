@@ -5,7 +5,10 @@ function clean() {
 }
 
 function test() {
-    node -e "var r = require('eslint-import-resolver-node'); console.log('node can find eslint-import-resolver-node')"
+    (
+        cd node_modules/eslint-plugin-import
+        node -e "var r = require('eslint-import-resolver-node'); console.log('node can find eslint-import-resolver-node')"
+    )
 }
 
 echo "=== NPM ==="
