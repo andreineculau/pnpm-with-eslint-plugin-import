@@ -1,0 +1,20 @@
+#/usr/bin/env bash
+
+function clean() {
+    git clean -xdf .
+}
+
+function test() {
+    node -e "var r = require('eslint-import-resolver-node'); console.log('node can find eslint-import-resolver-node')"
+}
+
+echo "=== NPM ==="
+clean
+npm install
+test
+
+
+echo "=== PNPM ==="
+clean
+pnpm install
+test
